@@ -1,0 +1,37 @@
+{% extends "admin/base-admin.html" %}
+
+
+{% block content %}
+
+<h1><a href="{{ url_for('users') }}">Users</a></h1>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users.items  %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td><a href="{{ url_for('user_detail', user_id=user.id) }}">{{ user.username }}</a></td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if users.has_next %}<a href="{{ url_for('users', page = users.next_num) }}"><< Older</a>{% else %}<< Older {% endif %}  |
+{% if users.has_prev %}<a href="{{ url_for('users', page = users.prev_num) }}">Newer >></a>{% else %}Newer >>{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% from "macros.html" import render_field_bootstrap %}
+
+{% extends "admin/base-admin.html" %}
+
+
+{% block content %}
+
+<h1><a href="{{ url_for('articles') }}">Articles</a></h1>
+
+<div class="second_nav">
+  <ul class="nav nav-pills green_pills">
+    <li><a href="{{ url_for('article_add') }}">Add Article</a></li>
+  </ul>
+</div>
+
+
+<form role="form" action="{{ url_for('article_add') }}" method="POST">
+  {{ form.hidden_tag() }}
+  {{ render_field_bootstrap(form.title) }}
+  {{ render_field_bootstrap(form.slug, placeholder="Leave blank to autofill slug") }}
+  {{ render_field_bootstrap(form.tag) }}
+  {{ render_field_bootstrap(form.body) }}
+  {{ render_field_bootstrap(form.submit) }}
+</form>
+
+
+
+
+{% endblock %}

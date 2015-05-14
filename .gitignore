@@ -1,0 +1,14 @@
+*.py[cod]
+*.~
+
+# PyCharm
+.idea
+
+# Temp files
+*.pid
+celerybeat-schedule
+
+# settings files
+config_dev.py
+config_prod.py
+configs/

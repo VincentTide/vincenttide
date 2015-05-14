@@ -1,0 +1,20 @@
+{% from "macros.html" import render_field_bootstrap %}
+
+{% extends "admin/base-admin.html" %}
+
+
+{% block content %}
+
+<h1><a href="{{ url_for('users') }}">Users</a></h1>
+
+
+<p><b>ID</b> {{ user.id }}</p>
+<p><b>Username</b> {{ user.username }}</p>
+<p><b>Email</b> {{ user.email }}</p>
+<p><b>Active</b> {{ user.active }}</p>
+<p><b>Created</b> {{ user.created_at }}</p>
+<p><b>Roles</b> {{ user.roles }}</p>
+
+
+
+{% endblock %}

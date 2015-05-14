@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+vincenttide
+{% endblock %}
+
+{% block extra_head %}
+<meta name="description" content="Web developer blog and portfolio.">
+{% endblock %}
+
+{% block content %}
+
+<div id="middle">
+  <div class="container">
+
+
+      {% for article in articles.items  %}
+        <div class="article_well">
+          <h2 class="article_title"><a href="{{ url_for('article_single', article_id=article.id, slug=article.slug) }}">{{ article.title }}</a></h2>
+          <p class="article_time">{{ moment(article.created_at).format('ll') }}</p>
+          <p class="article_body">{{ article.html | safe }}</p>
+        </div>
+      {% endfor %}
+
+
+      <div id="pagination">
+      {% if articles.has_next %}
+        <a href="{{ url_for('index', page = articles.next_num) }}" class="btn btn-success">< Older articles</a>
+      {% else %}
+          <a href="#" class="btn btn-success disabled">< Older articles</a>
+      {% endif %}
+      {% if articles.has_prev %}
+        <a href="{{ url_for('index', page = articles.prev_num) }}" class="btn btn-success pull-right">Newer articles ></a>
+      {% endif %}
+      </div>
+
+
+    </div> <!-- /container -->
+</div> <!-- /middle -->
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "admin/base-admin.html" %}
+
+
+{% block content %}
+
+<h1><a href="{{ url_for('articles') }}">Articles</a></h1>
+
+<div class="second_nav">
+  <ul class="nav nav-pills green_pills">
+    <li><a href="{{ url_for('article_add') }}">Add Article</a></li>
+  </ul>
+</div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in articles.items  %}
+      <tr>
+        <td>{{ article.id }}</td>
+        <td><a href="{{ url_for('article_detail', article_id=article.id) }}">{{ article.title }}</a></td>
+        <td>{{ article.User.username }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if articles.has_next %}<a href="{{ url_for('articles', page = articles.next_num) }}"><< Older articles</a>{% else %}<< Older articles {% endif %}  |
+{% if articles.has_prev %}<a href="{{ url_for('articles', page = articles.prev_num) }}">Newer articles >></a>{% else %}Newer articles >>{% endif %}
+
+
+
+{% endblock %}

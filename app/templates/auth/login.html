@@ -1,0 +1,22 @@
+{% from "macros.html" import render_field_bootstrap %}
+
+{% extends "base.html" %}
+
+{% block title %}{{ config.SITE_TITLE }} - Login{% endblock %}
+
+{% block content %}
+
+  <div class="form_well">
+    <div class="login_form">
+      <h2>Login</h2>
+      <form role="form" action="" method="POST">
+        {{ form.hidden_tag() }}
+        {{ render_field_bootstrap(form.email) }}
+        {{ render_field_bootstrap(form.password) }}
+        {{ render_field_bootstrap(form.remember_me) }}
+        {{ render_field_bootstrap(form.submit) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

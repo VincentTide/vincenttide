@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{{ config.SITE_TITLE }}{% endblock %}</title>
+
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon.ico"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/css/vincenttide.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+
+    {% block extra_css %}{% endblock %}
+
+    {% block extra_js %}{% endblock %}
+    {% block extra_head %}{% endblock %}
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div id="site_banner">
+      <div class="container">
+        <a href="{{ url_for('index') }}">
+            <h1>vincenttide</h1>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="flash_messages">
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+
+
+
+    <div id="main_nav_container">
+      <ul id="main_nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+      </ul>
+    </div>
+
+
+{#    <img style="margin-left:20px;" src="http://placehold.it/728x90" />#}
+
+
+    </div>
+
+    {% block content %}{% endblock %}
+
+
+    <div id="footer">
+      <div class="container">
+        <p>{{ moment().format('LL') }} &copy; vincenttide {{ moment().format('YYYY') }}.</p>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    {{ moment.include_moment() }}
+
+    {#    Google Analytics #}
+  </body>
+</html>

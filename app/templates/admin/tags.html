@@ -1,0 +1,35 @@
+{% extends "admin/base-admin.html" %}
+
+
+{% block content %}
+
+<h1><a href="{{ url_for('tags') }}">Tags</a></h1>
+
+<div class="second_nav">
+  <ul class="nav nav-pills green_pills">
+    <li><a href="{{ url_for('tag_add') }}">Add Tag</a></li>
+  </ul>
+</div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories  %}
+      <tr>
+        <td>{{ category.id }}</td>
+        <td><a href="/">{{ category.name }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

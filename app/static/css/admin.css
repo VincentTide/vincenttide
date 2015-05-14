@@ -1,0 +1,22 @@
+.green_pills li {
+  background-color: #27ae60;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.green_pills li a {
+  color: #ffffff;
+}
+.green_pills li a:hover {
+  background-color: #2ecc71;
+}
+.second_nav {
+  margin: 10px 0 20px 0;
+}
+textarea {
+  width: 90%;
+  height: 300px;
+}
+form input[type=text] {
+  width: 75%;
+}

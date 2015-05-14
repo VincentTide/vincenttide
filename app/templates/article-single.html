@@ -1,0 +1,28 @@
+{% from "macros.html" import render_field_bootstrap %}
+
+{% extends "base.html" %}
+
+{% block title %}
+{{ article.title }} - {{ config.SITE_TITLE }}
+{% endblock %}
+
+{% block content %}
+
+
+<div id="middle">
+  <div class="container">
+
+
+        <div class="article_well">
+          <h2 class="article_title">{{ article.title }}</h2>
+          <p class="article_time">{{ moment(article.created_at).format('ll') }}</p>
+          <p class="article_body">{{ article.html | safe }}</p>
+
+        </div>
+
+
+    </div> <!-- /container -->
+</div> <!-- /middle -->
+
+
+{% endblock %}
