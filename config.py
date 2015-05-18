@@ -7,4 +7,4 @@ DEFAULT_ROLE = 'user'
 ARTICLES_PER_PAGE_HOMEPAGE = 7
 ARTICLES_PER_PAGE_ADMIN = 20
 
-from config_dev import *
+from config_prod import *
