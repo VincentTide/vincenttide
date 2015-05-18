@@ -54,6 +54,13 @@ def html(tag_name, value, options, parent, context):
 def article_img(tag_name, value, options, parent, context):
     return '<div class="article_image"><img src="%s" /></div>' % value
 
+def pre(tag_name, value, options, parent, context):
+    return '<pre class="prettyprint">%s</pre>' % value
+
+def code(tag_name, value, options, parent, context):
+    return '<code class="prettyprint">%s</code>' % value
+
+
 bbparser = bbcode.Parser()
 bbparser.add_formatter('dev',
                        dev,
@@ -70,6 +77,10 @@ bbparser.add_formatter('article_img',
                        article_img,
                        replace_links=False,
                        swallow_trailing_newline=True)
+bbparser.add_formatter('pre',
+                       pre)
+bbparser.add_formatter('code',
+                       code)
 bbparser.add_simple_formatter('h1', '<h1>%(value)s</h1>')
 bbparser.add_simple_formatter('h2', '<h2>%(value)s</h2>')
 bbparser.add_simple_formatter('h3', '<h3>%(value)s</h3>')
