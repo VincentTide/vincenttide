@@ -15,25 +15,6 @@
 
                 <br>
                 <h4><a href="https://github.com/VincentTide" target="_blank">My GitHub</a></h4>
-
-
-
-                <pre class="prettyprint">
-sockjs_chat.on('connection', function(conn) {
-    var browser = redis.createClient();
-    browser.subscribe('chat_channel');
-
-    // When we see a message on chat_channel, send it to the browser
-    browser.on("message", function(channel, message){
-        conn.write(message);
-    });
-
-    // When we receive a message from browser, send it to be published
-    conn.on('data', function(message) {
-        publisher.publish('chat_channel', message);
-    });
-});
-                </pre>
             </div>
         </div>
     </div> <!-- /container -->
