@@ -6,17 +6,23 @@
 
 {% block content %}
 
-  <div class="form_well">
-    <div class="login_form">
-      <h2>Login</h2>
-      <form role="form" action="" method="POST">
-        {{ form.hidden_tag() }}
-        {{ render_field_bootstrap(form.email) }}
-        {{ render_field_bootstrap(form.password) }}
-        {{ render_field_bootstrap(form.remember_me) }}
-        {{ render_field_bootstrap(form.submit) }}
-      </form>
-    </div>
-  </div>
+<div id="middle">
+    <div class="container">
+        <div class="article_single">
+          <div class="form_well">
+            <div class="login_form">
+              <h2>Login</h2>
+              <form role="form" action="" method="POST">
+                {{ form.hidden_tag() }}
+                {{ render_field_bootstrap(form.email) }}
+                {{ render_field_bootstrap(form.password) }}
+                {{ render_field_bootstrap(form.remember_me) }}
+                {{ render_field_bootstrap(form.submit) }}
+              </form>
+            </div>
+          </div>
+        </div>
+    </div> <!-- /container -->
+</div> <!-- /middle -->
 
 {% endblock %}
