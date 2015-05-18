@@ -91,3 +91,12 @@ def tools():
 def contact_us():
     return render_template('contact-us.html')
 
+
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
+
+@app.route('/portfolio', methods=['GET'])
+def portfolio():
+    return render_template('portfolio.html')

@@ -12,12 +12,12 @@
 <div id="middle">
   <div class="container">
 
-
-        <div class="article_well">
-          <h2 class="article_title">{{ article.title }}</h2>
-          <p class="article_time">{{ moment(article.created_at).format('ll') }}</p>
-          <p class="article_body">{{ article.html | safe }}</p>
-
+        <div class="article_single">
+            <div class="article_well">
+              <h2 class="article_title">{{ article.title }}</h2>
+              <p class="article_time">{{ moment(article.created_at).format('ll') }}</p>
+              <p class="article_body">{{ article.html | safe }}</p>
+            </div>
         </div>
 
 

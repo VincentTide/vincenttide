@@ -16,179 +16,70 @@
 @yellow2: #f39c12;
 @blue: #0091ff;
 @yellow: #FFF3A5;
+@purple1: #9b59b6;
+@purple2: #8e44ad;
 
 // Site Colors
 @bg-color: @grey1;
 @bg-gradient1: #121212;
 @bg-gradient2: #1F1F1F;
-@footer-bg-color: @green2;
+@footer-bg-color: @purple2;
 @footer-font-color: @white;
 @footer-link-color: @white;
 @link-color: @green2;
 @link-hover-color: @green1;
-@article-title-color: @green2;
+@article-title-color: #5bc0de;
 @official-font-color: @blue;
 
 
-
-
-@media (min-width: 800px) {
-  .container {
-    width: 800px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
-  .article_well {
-    padding: 8px 4px 16px 4px !important;
-  }
-  .dev {
-    padding: 4px 4px 4px 4px !important;
-  }
-}
-
-
 body {
-  color: @black;
-  background-color: @bg-color;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
 }
 
-.container {
-  background-color: @bg-color;
+#header blockquote p {
+    font-family: Raleway, sans-serif;
+    font-size: 36px;
+    font-style: normal !important;
+    color: white;
 }
 
-#middle {
-    .container {
-        background-color: @bg-color;
-    }
-    background-color: @bg-color;
+.article_single {
+    margin: 100px 0 0 0;
 }
 
-img {
-  max-width: 100%;
-}
-
-#main_nav_container {
-  height: 100%;
-  margin: 0 0 30px 0;
-}
-
-#main_nav {
-  width: 100%;
-  height: 100%;
-  float: left;
-  margin: 10px 0 10px 0;
-  padding: 0;
-  list-style: none;
-  background-color: @green2;
-  border-bottom: 1px solid @green1;
-  border-top: 1px solid @green1;
-  li {
-    float: left;
-    a {
-      display: block;
-      padding: 8px 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: @white;
-      border-right: 1px solid @green1;
-    }
-    a:hover{
-      color: @white;
-      background-color: @green1;
-    }
-  }
-}
-
-#site_banner .container {
-  background: none;
-}
-
-#site_banner {
-  a {
-    text-decoration: none;
-  }
-  h1 {
-    color: @black;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-}
-
-
-#site_banner_title {
-  position: absolute;
-  margin: 20px 0 0 10px;
-  font-size: 48px;
-  font-weight: 300;
-  letter-spacing: -0.0625em;
-  color: @white;
-}
-
-.flash_messages {
-  padding: 0px 0px;
-}
-
-.article_well {
-  font-size: 20px;
-  a {
-    color: @link-color;
-  }
-  h1 {
-    font-weight: 300;
-    margin-bottom: 0;
-    color: @article-title-color;
-  }
-  h2 {
-    font-size: 40px;
-    font-weight: 300;
-    margin-bottom: 0;
-    color: @article-title-color;
-  }
-}
 
 div .article_well {
-  background-color: @grey0;
-  padding: 10px 20px 25px 20px;
-  margin: 10px 0 10px 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+    padding: 10px 20px 25px 20px;
+    margin: 10px 0 10px 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 22px;
+    line-height: 1.5;
+    h3 {
+        font-size: 34px;
+        color: black;
+        padding-top: 40px;
+    }
+}
+
+.article_title {
+    font-size: 42px;
+    color: @article-title-color;
 }
 
 .article_time {
-  font-size: 12px;
-  margin-bottom: 20px;
+    font-size: 17px;
+    margin-bottom: 20px;
 }
 
 .article_image {
-  margin: 10px 0;
-  text-align: center;
-  img {
-    max-width: 100%;
-  }
-}
-
-.form_well {
-  background-color: @white;
-  padding: 10px 10px 25px 10px;
-  margin: 10px 0 10px 0;
-  color: @black;
-}
-
-a {
-  color: @link-color;
-}
-
-a:hover {
-  color: @link-hover-color;
+    margin: 10px 0;
+    text-align: center;
+    img {
+        max-width: 100%;
+    }
 }
 
 #footer {
@@ -204,45 +95,3 @@ a:hover {
 #footer .container {
   background-color: @footer-bg-color;
 }
-
-#pagination {
-  padding: 20px 0 20px 0;
-}
-
-.dev {
-  background-color: @dark4;
-  color: @official-font-color;
-  padding: 10px 10px 10px 10px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  h1 {
-    color: @yellow;
-    font-size: 30px;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  h2 {
-    color: @white;
-    font-size: 24px;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  h3 {
-    color: @white;
-    font-size: 20px;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  h4 {
-    color: @white;
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
