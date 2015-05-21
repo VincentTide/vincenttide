@@ -87,9 +87,9 @@ def tools():
     return render_template('tools.html')
 
 
-@app.route('/contact-us', methods=['GET'])
-def contact_us():
-    return render_template('contact-us.html')
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template('contact.html')
 
 
 @app.route('/about', methods=['GET'])
